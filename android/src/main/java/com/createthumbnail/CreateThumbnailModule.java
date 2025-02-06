@@ -70,7 +70,7 @@ public class CreateThumbnailModule extends ReactContextBaseJavaModule {
             String format = options.hasKey("format") ? options.getString("format") : "jpeg";
             String cacheName = options.hasKey("cacheName") ? options.getString("cacheName") : "";
 
-            String thumbnailDir = weakContext.get().getApplicationContext().getDataDir().getAbsolutePath() + "/thumbnails";
+            String thumbnailDir = weakContext.get().getApplicationContext().getFilesDir().getAbsolutePath() + "/thumbnails";
             File cacheDir = createDirIfNotExists(thumbnailDir);
             if (!TextUtils.isEmpty(cacheName)) {
                 File file = new File(thumbnailDir, cacheName + "." + format);
